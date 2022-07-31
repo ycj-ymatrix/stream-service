@@ -1,0 +1,10 @@
+version: v1
+breaking:
+  use:
+    - api
+lint:
+  use:
+    - DEFAULT
+build:
+  excludes:
+    - bin

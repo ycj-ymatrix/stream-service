@@ -5,7 +5,7 @@ package main
 
 import (
 	cobra "github.com/spf13/cobra"
-	"github.com/ycj-ymatrix/stream-service/gen/api/v1"
+	v1 "github.com/ycj-ymatrix/stream-service/gen/api/v1"
 	cli "go.einride.tech/protoc-gen-go-cli/cli"
 )
 
@@ -13,7 +13,7 @@ func NewRootCommand() *cobra.Command {
 	cmd := &cobra.Command{
 		Use: "stream-cli",
 	}
-	cmd.AddCommand(v1.NewStreamDemoCommand("stream-demo"))
+	cmd.AddCommand(v1.NewStreamDemoServiceCommand("stream-demo"))
 	return cmd
 }
 

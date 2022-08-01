@@ -3,7 +3,7 @@ version: v1
 managed:
   enabled: true
   go_package_prefix:
-    default: github.com/ycj-ymatrix/stream-service/bin
+    default: github.com/ycj-ymatrix/stream-service/gen
     except:
       - buf.build/googleapis/googleapis
 
@@ -19,10 +19,10 @@ plugins:
       - require_unimplemented_servers=false
 
   - name: go-cli
-    out: bin
+    out: gen
     path: tool/protoc-gen-go-cli
     strategy: all
     opt:
-      - module=github.com/ycj-ymatrix/stream-service/bin
+      - module=github.com/ycj-ymatrix/stream-service/gen
       - root=stream-cli
       - main=true

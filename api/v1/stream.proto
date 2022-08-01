@@ -1,18 +1,17 @@
 syntax = "proto3";
 
-package api;
+package api.v1;
 
-option go_package = "github.com/ycj-ymatrix/stream-service/api;api";
+option go_package = "github.com/ycj-ymatrix/stream-service/gen/api/v1;v1";
 
-message PingPong {
-  message Request {
-    uint32 count = 1 ;
-  }
-  message Response {
-    string greet = 1;
-  }
+message PingPongRequest {
+  uint32 count = 1;
 }
 
-service StreamDemo {
-  rpc PingPong(PingPong.Request) returns(stream PingPong.Response);
+message PingPongResponse {
+  string greet = 1;
+}
+
+service StreamDemoService {
+  rpc PingPong(PingPongRequest) returns (stream PingPongResponse);
 }

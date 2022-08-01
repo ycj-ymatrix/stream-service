@@ -2,7 +2,6 @@ package main
 
 import (
 	"fmt"
-	"github.com/ycj-ymatrix/stream-service/server"
 	"net"
 	"os"
 	"os/signal"
@@ -19,7 +18,7 @@ func main() {
 	}
 
 	srv := grpc.NewServer()
-	api.RegisterStreamDemoServer(srv, server.NewStreamDemo())
+	api.RegisterStreamDemoServiceServer(srv, NewStreamDemoService())
 
 	fmt.Printf("stream rpc server starts to service on a random port: %s\n", l.Addr())
 
